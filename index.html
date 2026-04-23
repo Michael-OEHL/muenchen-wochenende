@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servus München · 08 — 10 Mai 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fef6e4;
+    --cream-deep: #f9e8c8;
+    --sky-light: #cde7f4;
+    --sky: #6eb5d9;
+    --sky-deep: #2d6a9f;
+    --grass-light: #bbdba7;
+    --grass: #7fb069;
+    --grass-deep: #4a7339;
+    --sun: #f7c35f;
+    --sun-deep: #e6a834;
+    --red: #d65a4a;
+    --red-deep: #a83a2d;
+    --wood: #a87448;
+    --wood-deep: #6b4824;
+    --ink: #2c2416;
+    --ink-soft: #6b5e47;
+    --paper: #fffcf4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { display: block; max-width: 100%; height: auto; }
+
+  /* ═══════════════════════════════════════════════
+     HERO
+  ═══════════════════════════════════════════════ */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #a4c5dc 0%, #e3b68a 55%, #fef6e4 100%);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-image: url('https://images.pexels.com/photos/28733346/pexels-photo-28733346.jpeg?auto=compress&cs=tinysrgb&w=2400');
+    background-size: cover;
+    background-position: center 38%;
+  }
+
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+      rgba(44, 36, 22, 0.20) 0%,
+      rgba(44, 36, 22, 0.08) 35%,
+      rgba(254, 246, 228, 0.25) 60%,
+      rgba(254, 246, 228, 0.98) 100%);
+  }
+
+  .hero-top {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.8rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hero-top-mark {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.7rem;
+    color: var(--paper);
+    font-weight: 500;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-top-date {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--paper);
+    background: rgba(44, 36, 22, 0.45);
+    backdrop-filter: blur(8px);
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    border: 1.5px solid rgba(255, 252, 244, 0.3);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    width: 100%;
+    margin: auto auto 0;
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: var(--red);
+    color: var(--paper);
+    padding: 0.55rem 1.2rem;
+    border-radius: 100px;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    transform: rotate(-2deg);
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+
+  .hero-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(3.5rem, 12vw, 10rem);
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.8rem;
+    color: var(--ink);
+    max-width: 900px;
+  }
+
+  .hero-title em { font-style: italic; color: var(--red-deep); font-weight: 600; }
+
+  .hero-sub {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--ink);
+    max-width: 620px;
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+  }
+
+  .hero-chips { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+  .chip {
+    background: var(--paper);
+    padding: 0.45rem 1rem;
+    border-radius: 100px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--ink);
+    border: 2px solid var(--ink);
+    box-shadow: 2px 2px 0 var(--ink);
+    transition: transform 0.2s;
+  }
+  .chip:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--ink); }
+  .chip.blue { background: var(--sky); color: var(--paper); }
+  .chip.red { background: var(--red); color: var(--paper); }
+  .chip.green { background: var(--grass); color: var(--paper); }
+  .chip.sun { background: var(--sun); }
+
+  /* ═══════════════════════════════════════════════
+     INTRO
+  ═══════════════════════════════════════════════ */
+  .intro {
+    background: var(--cream);
+    padding: 5rem 1.5rem 4rem;
+    text-align: center;
+  }
+
+  .intro-ornament {
+    width: 60px;
+    height: 4px;
+    background: var(--red);
+    margin: 0 auto 2rem;
+    position: relative;
+    border-radius: 2px;
+  }
+
+  .intro-ornament::before,
+  .intro-ornament::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    background: var(--sun);
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+  .intro-ornament::before { left: -18px; }
+  .intro-ornament::after { right: -18px; }
+
+  .intro-inner { max-width: 820px; margin: 0 auto; }
+
+  .intro p {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(1.25rem, 2.1vw, 1.75rem);
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .intro p em { font-style: italic; color: var(--red-deep); font-weight: 500; }
+  .intro p strong { background: linear-gradient(180deg, transparent 60%, var(--sun) 60%); font-weight: 500; }
+
+  /* ═══════════════════════════════════════════════
+     GROSSELTERN-SEKTION
+  ═══════════════════════════════════════════════ */
+  .grandparents {
+    background: var(--cream-deep);
+    padding: 3.5rem 1.5rem;
+    border-top: 3px solid var(--ink);
+    border-bottom: 3px solid var(--ink);
+  }
+
+  .grandparents-inner { max-width: 1100px; margin: 0 auto; }
+
+  .grandparents-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1.5rem;
+    align-items: center;
+    cursor: pointer;
+    padding: 1.2rem 1.5rem;
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    border-radius: 16px;
+    box-shadow: 5px 5px 0 var(--sun-deep);
+    transition: transform 0.25s, box-shadow 0.25s;
+    user-select: none;
+  }
+
+  .grandparents-header:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 var(--sun-deep);
+  }
+
+  .grandparents-title-wrap { display: flex; flex-direction: column; gap: 0.3rem; }
+
+  .grandparents-label {
+    display: inline-block;
+    align-self: flex-start;
+    background: var(--sun);
+    color: var(--ink);
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 800;
+    border: 1.5px solid var(--ink);
+  }
+
+  .grandparents-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+    line-height: 1.15;
+    color: var(--ink);
+  }
+  .grandparents-title em { font-style: italic; color: var(--red-deep); }
+
+  .grandparents-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--ink);
+    background: var(--sun);
+    padding: 0.7rem 1.2rem;
+    border-radius: 100px;
+    border: 2px solid var(--ink);
+    white-space: nowrap;
+  }
+
+  .grandparents-toggle .arrow {
+    display: inline-block;
+    width: 14px; height: 14px;
+    position: relative;
+    transition: transform 0.4s ease;
+  }
+
+  .grandparents-toggle .arrow::before {
+    content: '';
+    position: absolute;
+    left: 2px; top: 4px;
+    width: 10px; height: 10px;
+    border-right: 2.5px solid var(--ink);
+    border-bottom: 2.5px solid var(--ink);
+    transform: rotate(45deg);
+  }
+
+  .grandparents.open .grandparents-toggle .arrow { transform: rotate(180deg); }
+
+  .grandparents-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .grandparents.open .grandparents-content { max-height: 2400px; }
+
+  .grandparents-body { padding: 2rem 0 0; }
+
+  .grandparents-intro {
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-bottom: 2rem;
+    padding: 1.2rem 1.5rem;
+    background: var(--paper);
+    border-left: 4px solid var(--red);
+    border-radius: 0 10px 10px 0;
+  }
+  .grandparents-intro em { font-style: italic; color: var(--red-deep); }
+  .grandparents-intro strong { color: var(--ink); background: linear-gradient(180deg, transparent 60%, var(--sun) 60%); }
+
+  .gp-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .gp-option {
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 5px 5px 0 var(--ink);
+    transition: transform 0.25s, box-shadow 0.25s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gp-option:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 var(--ink);
+  }
+
+  .gp-option-image {
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .gp-option-image.bg-residenz { background-image: url('images/residenz.png'); }
+  .gp-option-image.bg-nymphenburg { background-image: url('images/nymphenburg.png'); }
+  .gp-option-image.bg-cafe {
+    background-image: url('images/viktualienmarkt.png');
+    background-position: center 40%;
+  }
+
+  .gp-option-body {
+    padding: 1.3rem 1.4rem 1.4rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gp-option-tag {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--ink-soft);
+    margin-bottom: 0.5rem;
+  }
+
+  .gp-option-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin-bottom: 0.6rem;
+    color: var(--ink);
+  }
+  .gp-option-name em { font-style: italic; color: var(--red-deep); }
+
+  .gp-option-desc {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* ═══════════════════════════════════════════════
+     STICKY NAV
+  ═══════════════════════════════════════════════ */
+  .day-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--cream);
+    border-bottom: 3px solid var(--ink);
+    border-top: 3px solid var(--ink);
+  }
+
+  .day-nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .day-nav-inner::-webkit-scrollbar { display: none; }
+
+  .day-nav a {
+    flex: 0 0 auto;
+    padding: 1.2rem 1.5rem;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 800;
+    transition: all 0.25s;
+    border-bottom: 4px solid transparent;
+    white-space: nowrap;
+  }
+
+  .day-nav a:hover, .day-nav a.active {
+    color: var(--red-deep);
+    border-bottom-color: var(--red);
+  }
+
+  /* ═══════════════════════════════════════════════
+     DAY
+  ═══════════════════════════════════════════════ */
+  .day { padding: 5rem 1.5rem 3rem; position: relative; }
+
+  .day.bg-sky { background: linear-gradient(180deg, #e8f4fb 0%, var(--cream) 100%); }
+  .day.bg-sun { background: linear-gradient(180deg, #fdefd4 0%, var(--cream) 100%); }
+  .day.bg-cream { background: var(--cream); }
+
+  .day-header {
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    align-items: end;
+  }
+
+  .day-number-box {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 1rem 1.4rem;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    transform: rotate(-2deg);
+    box-shadow: 5px 5px 0 var(--red);
+  }
+  .day-number-box.sky-shadow { box-shadow: 5px 5px 0 var(--sky); transform: rotate(2deg); }
+  .day-number-box.grass-shadow { box-shadow: 5px 5px 0 var(--grass); transform: rotate(-3deg); }
+
+  .day-number-box .num { font-family: 'Fraunces', serif; font-size: 3.2rem; font-weight: 600; line-height: 1; }
+  .day-number-box .lbl { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; margin-top: 0.3rem; color: var(--sun); }
+
+  .day-title { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 0.8rem; }
+  .day-title em { font-style: italic; color: var(--red-deep); }
+
+  .day-date { font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); font-weight: 700; margin-bottom: 0.7rem; }
+
+  .day-lede { max-width: 1200px; margin: 0 auto 3rem; font-size: 1.1rem; line-height: 1.65; color: var(--ink-soft); }
+
+  /* ═══════════════════════════════════════════════
+     STOP CARDS
+  ═══════════════════════════════════════════════ */
+  .stops { max-width: 1200px; margin: 0 auto; display: grid; gap: 2.5rem; }
+
+  .stop {
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 6px 6px 0 var(--ink);
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .stop:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--ink); }
+
+  .stop-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    min-height: 360px;
+  }
+
+  .stop-image {
+    position: relative;
+    overflow: hidden;
+    min-height: 360px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* User-uploaded photos (with positioning) */
+  .stop-image.bg-hotel {
+    background-image: url('images/hotel-schlicker.png');
+    background-position: center 40%;
+  }
+  .stop-image.bg-markt {
+    background-image: url('images/viktualienmarkt.png');
+    background-position: center 60%;
+  }
+  .stop-image.bg-garten {
+    background-image: url('images/englischer-garten.png');
+    background-position: center;
+  }
+  .stop-image.bg-brauhaus {
+    background-image: url('images/schneider-familie.png');
+    background-position: center 25%;
+  }
+  .stop-image.bg-museum {
+    background-image: url('images/deutsches-museum.png');
+    background-position: center;
+  }
+  .stop-image.bg-pizza {
+    background-image: url('images/riva-pizza.png');
+    background-position: center;
+  }
+  .stop-image.bg-fest {
+    background-image: url('images/fruehlingsfest.png');
+    background-position: center;
+  }
+
+  /* Sonntag Mittagessen: Frühlingsfest-Bild mit anderem Ausschnitt (Buden rechts) */
+  .stop-image.bg-sunday-lunch {
+    background-image: url('images/fruehlingsfest.png');
+    background-position: right center;
+    background-size: 180%;
+  }
+
+  .stop-num {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: var(--paper);
+    border: 2.5px solid var(--ink);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--ink);
+    z-index: 3;
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+
+  .stop-body-wrap {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .stop-time {
+    display: inline-block;
+    font-size: 0.74rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--red-deep);
+    font-weight: 800;
+    margin-bottom: 0.7rem;
+  }
+
+  .stop-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+  .stop-name em { font-style: italic; color: var(--red-deep); }
+
+  .stop-text { font-size: 1rem; color: var(--ink-soft); line-height: 1.7; margin-bottom: 1.2rem; }
+  .stop-text strong { color: var(--ink); font-weight: 700; background: linear-gradient(180deg, transparent 65%, var(--sun) 65%); }
+  .stop-text em { font-style: italic; }
+
+  .stop-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+  .tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding: 0.35rem 0.8rem;
+    border-radius: 100px;
+    border: 2px solid var(--ink);
+  }
+  .tag.confirmed { background: var(--grass); color: var(--paper); }
+  .tag.rare { background: var(--red); color: var(--paper); }
+  .tag.info { background: var(--sun); color: var(--ink); }
+  .tag.option { background: var(--paper); color: var(--ink); }
+
+  /* ═══════════════════════════════════════════════
+     ALTERNATIVEN
+  ═══════════════════════════════════════════════ */
+  .alternatives {
+    margin-top: 1.5rem;
+    padding-top: 1.4rem;
+    border-top: 2px dashed var(--ink-soft);
+  }
+
+  .alternatives-label {
+    display: inline-block;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+    padding: 0.3rem 0.8rem;
+    background: var(--cream-deep);
+    border-radius: 100px;
+    border: 1.5px solid var(--ink-soft);
+  }
+
+  .alt-list { display: grid; gap: 0.7rem; }
+
+  .alt-item {
+    padding: 1rem 1.1rem;
+    background: var(--cream);
+    border-left: 4px solid var(--red);
+    border-radius: 0 10px 10px 0;
+    transition: transform 0.2s, border-left-color 0.2s;
+  }
+
+  .alt-item:hover {
+    transform: translateX(3px);
+    border-left-color: var(--sun-deep);
+  }
+
+  .alt-item-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    margin-bottom: 0.3rem;
+    flex-wrap: wrap;
+  }
+
+  .alt-item-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .alt-item-name em { font-style: italic; color: var(--red-deep); }
+
+  .alt-item-cond {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    background: var(--sun);
+    color: var(--ink);
+  }
+
+  .alt-item-desc {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  /* ═══════════════════════════════════════════════
+     FEATURE · Schäfflertanz - mit echtem Foto
+  ═══════════════════════════════════════════════ */
+  .feature {
+    position: relative;
+    background:
+      linear-gradient(135deg, rgba(168, 58, 45, 0.88) 0%, rgba(214, 90, 74, 0.80) 100%),
+      url('images/schaefflertanz.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--paper);
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .feature-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .feature-tag {
+    display: inline-block;
+    background: var(--sun);
+    color: var(--ink);
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    border: 2px solid var(--ink);
+    transform: rotate(-2deg);
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+
+  .feature h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(2.3rem, 5.5vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    max-width: 640px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  .feature h2 em { font-style: italic; color: var(--sun); }
+
+  .feature-body {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--paper);
+    max-width: 580px;
+    margin-bottom: 2rem;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .feature-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding-top: 2rem;
+    border-top: 2px solid rgba(254, 246, 228, 0.3);
+    max-width: 600px;
+  }
+
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: var(--sun);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .stat-lbl { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; }
+
+  /* Frühlingsfest-Logo rechts im Feature-Banner */
+  .feature-logo {
+    position: relative;
+    max-width: 420px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .feature-logo img {
+    width: 100%;
+    height: auto;
+    border: 4px solid var(--ink);
+    border-radius: 16px;
+    box-shadow: 8px 8px 0 var(--ink);
+    transform: rotate(2deg);
+  }
+
+  /* ═══════════════════════════════════════════════
+     LOGISTICS
+  ═══════════════════════════════════════════════ */
+  .logistics { background: var(--cream); padding: 5rem 1.5rem; }
+  .logistics-inner { max-width: 1200px; margin: 0 auto; }
+
+  .log-head { text-align: center; margin-bottom: 3rem; }
+  .log-label {
+    display: inline-block;
+    background: var(--grass);
+    color: var(--paper);
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+  .log-title { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.05; }
+  .log-title em { font-style: italic; color: var(--red-deep); }
+
+  .log-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .log-card {
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    border-radius: 16px;
+    padding: 1.8rem;
+    box-shadow: 5px 5px 0 var(--ink);
+    transition: transform 0.25s;
+  }
+  .log-card:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
+
+  .log-card-icon {
+    width: 52px; height: 52px;
+    background: var(--sun);
+    border: 2.5px solid var(--ink);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.2rem;
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem; font-weight: 700; font-style: italic;
+  }
+  .log-card.green .log-card-icon { background: var(--grass); color: var(--paper); }
+  .log-card.blue .log-card-icon { background: var(--sky); color: var(--paper); }
+  .log-card.red .log-card-icon { background: var(--red); color: var(--paper); }
+
+  .log-card h3 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.25rem; margin-bottom: 0.7rem; line-height: 1.2; }
+  .log-card p { color: var(--ink-soft); font-size: 0.93rem; line-height: 1.6; }
+
+  /* ═══════════════════════════════════════════════
+     FOOTER
+  ═══════════════════════════════════════════════ */
+  .footer {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 5rem 1.5rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 12px;
+    background: repeating-linear-gradient(-45deg,
+      var(--sky) 0 20px,
+      var(--paper) 20px 40px);
+  }
+
+  .footer-quote {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+    line-height: 1.4;
+    max-width: 780px;
+    margin: 0 auto 2.5rem;
+  }
+  .footer-quote em { color: var(--sun); }
+
+  .footer-mark { font-family: 'Fraunces', serif; font-size: 1.1rem; color: var(--sun); margin-bottom: 0.5rem; }
+  .footer-dates { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--cream); opacity: 0.6; }
+
+  @media (max-width: 780px) {
+    .hero { min-height: 85vh; }
+    .hero-top { padding: 1rem 1.25rem; flex-wrap: wrap; gap: 0.5rem; }
+    .hero-content { padding: 1rem 1.25rem 2rem; }
+    .hero-sub { font-size: 1rem; }
+
+    .intro { padding: 4rem 1.25rem 3rem; }
+
+    .grandparents { padding: 2.5rem 1.25rem; }
+    .grandparents-header { grid-template-columns: 1fr; gap: 1rem; padding: 1rem 1.2rem; }
+    .grandparents-toggle { justify-self: flex-start; }
+
+    .day-header { grid-template-columns: 1fr; gap: 1rem; }
+    .day-number-box { align-self: flex-start; }
+    .day-number-box .num { font-size: 2.5rem; }
+
+    .stop-grid { grid-template-columns: 1fr; }
+    .stop-image { min-height: 240px; }
+    .stop-body-wrap { padding: 1.5rem; }
+
+    .alt-item-head { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+
+    .feature-inner { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 1.25rem; }
+    .feature-stats { grid-template-columns: 1fr; gap: 1rem; padding-top: 1.5rem; }
+    .feature-logo { max-width: 320px; }
+
+    .logistics { padding: 4rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+
+  <div class="hero-top">
+    <div class="hero-top-mark">Servus!</div>
+    <div class="hero-top-date">08 — 10 Mai 2026</div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge">Drei Tage · Eine Stadt · Ein Frühlingsfest</div>
+    <h1 class="hero-title">
+      Servus,<br>
+      <em>München.</em>
+    </h1>
+    <p class="hero-sub">
+      Ein Wochenende zwischen Marienplatz, Englischem Garten, Biergarten
+      und dem letzten Tag des 60. Münchner Frühlingsfests. Bayerische
+      Gemütlichkeit, ein italienischer Abend, ein Schäfflertanz zum
+      Abschluss — und viel Platz für das Spontane.
+    </p>
+    <div class="hero-chips">
+      <div class="chip blue">Altstadt</div>
+      <div class="chip green">Englischer Garten</div>
+      <div class="chip red">Frühlingsfest</div>
+      <div class="chip sun">Viktualienmarkt</div>
+      <div class="chip">Bräuhaus</div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="intro-ornament"></div>
+  <div class="intro-inner">
+    <p>
+      Ein Wochenende, das eine Stadt auf <em>drei Tage</em> destilliert.
+      Am Freitag der ruhige Auftakt im Tal, bayerisch und gemütlich.
+      Am Samstag die Stadt zwischen <strong>Markttreiben und Gartenspaziergang</strong>.
+      Und am Sonntag das <em>Jubiläums-Finale</em> auf der Theresienwiese —
+      mit einem Moment, den München nur alle sieben Jahre zeigt.
+    </p>
+  </div>
+</section>
+
+<!-- GROSSELTERN-SEKTION -->
+<section class="grandparents" id="grosseltern">
+  <div class="grandparents-inner">
+    <div class="grandparents-header" onclick="this.parentElement.parentElement.classList.toggle('open')">
+      <div class="grandparents-title-wrap">
+        <div class="grandparents-label">Großeltern · Vormittag</div>
+        <h2 class="grandparents-title">
+          Für die Oma und Opas · <em>der freie Vormittag.</em>
+        </h2>
+      </div>
+      <div class="grandparents-toggle">
+        <span>Vorschläge</span>
+        <span class="arrow"></span>
+      </div>
+    </div>
+
+    <div class="grandparents-content">
+      <div class="grandparents-body">
+        <div class="grandparents-intro">
+          Die <em>Großeltern reisen gemeinsam am Vormittag an</em>, während
+          Michael, Stefanie, Eva und Lukas erst <strong>gegen 15:30 Uhr am Hotel</strong>
+          eintreffen. Das gibt den Großeltern einen entspannten halben Tag
+          in München — ohne Eile, ohne Kinderprogramm. Drei Ideen, je nach
+          Wetter und Lust:
+        </div>
+
+        <div class="gp-options">
+
+          <!-- Option 1: Residenz + Hofgarten zusammen -->
+          <div class="gp-option">
+            <div class="gp-option-image bg-residenz"></div>
+            <div class="gp-option-body">
+              <div class="gp-option-tag">Königlich · zu Fuß</div>
+              <div class="gp-option-name">Residenz & Hofgarten</div>
+              <div class="gp-option-desc">
+                Das ehemalige Stadtschloss der Wittelsbacher — Deutschlands
+                größter Stadtpalast mit Schatzkammer voller Kronjuwelen,
+                Kelchen, Goldschmiedekunst aus 1.000 Jahren Bayern. Direkt
+                daneben der Hofgarten mit dem achteckigen Dianatempel in
+                der Mitte. Kies-Wege, Bänke, oft ein Boule-Spiel. Fünf
+                Minuten vom Hotel.
+              </div>
+            </div>
+          </div>
+
+          <!-- Option 2: Nymphenburg -->
+          <div class="gp-option">
+            <div class="gp-option-image bg-nymphenburg"></div>
+            <div class="gp-option-body">
+              <div class="gp-option-tag">Schloss · mit Fahrt</div>
+              <div class="gp-option-name">Nymphenburg · <em>Schloss & Park</em></div>
+              <div class="gp-option-desc">
+                Das barocke Sommerschloss der Wittelsbacher, ein kleines
+                Versailles mit weitläufigem Park, Kanälen, Schwänen. Mit
+                der Tram hin (ca. 20 Min) gehört zum Erlebnis. Wenn das
+                Wetter mitspielt, die schönste Kulisse Münchens.
+              </div>
+            </div>
+          </div>
+
+          <!-- Option 3: Café & Viktualienmarkt -->
+          <div class="gp-option">
+            <div class="gp-option-image bg-cafe"></div>
+            <div class="gp-option-body">
+              <div class="gp-option-tag">Gemütlich · einfach</div>
+              <div class="gp-option-name">Café & <em>Viktualienmarkt</em></div>
+              <div class="gp-option-desc">
+                Kein großes Programm — ein Kaffee in der Altstadt, durchs
+                Tal schlendern, über den Viktualienmarkt bummeln, eine
+                Brotzeit am Biergarten in der Marktmitte unter dem Maibaum.
+                Ankommen, ohne sich zu beeilen.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NAV -->
+<nav class="day-nav">
+  <div class="day-nav-inner">
+    <a href="#tag1" class="active">Freitag</a>
+    <a href="#tag2">Samstag</a>
+    <a href="#tag3">Sonntag</a>
+    <a href="#logistik">Logistik</a>
+  </div>
+</nav>
+
+<!-- TAG 1 -->
+<section class="day bg-sky" id="tag1">
+  <div class="day-header">
+    <div class="day-number-box">
+      <div class="num">01</div>
+      <div class="lbl">Freitag</div>
+    </div>
+    <div>
+      <div class="day-date">08. Mai 2026</div>
+      <h2 class="day-title">Ein leiser <em>Auftakt</em> im Tal.</h2>
+    </div>
+  </div>
+  <div class="day-lede">
+    München empfängt langsam. Nach der Anreise um 15:30 reicht ein kurzer
+    Spaziergang durch den Englischen Garten. Abends dann das erste
+    Weißbier, direkt neben dem Hotel.
+  </div>
+
+  <div class="stops">
+
+    <!-- I: Hotel Schlicker -->
+    <article class="stop">
+      <div class="stop-grid">
+        <div class="stop-image bg-hotel">
+          <span class="stop-num">I</span>
+        </div>
+        <div class="stop-body-wrap">
+          <div class="stop-time">15:30 · Ankunft der Jungen</div>
+          <h3 class="stop-name">Hotel Schlicker · <em>unsere Basis im Tal.</em></h3>
+          <p class="stop-text">
+            „Zum Goldenen Löwen" — seit 1544 eine Münchner Institution,
+            direkt am Tal zwischen Marienplatz und Isartor. Von hier sind
+            es <strong>zwei Minuten zum Marienplatz</strong>, fünf zum
+            Viktualienmarkt. Kein Stadtauto, kein Parken — mittendrin.
+            Frühstück inklusive.
+          </p>
+          <div class="stop-tags">
+            <span class="tag info">Tal 8 · 80331</span>
+            <span class="tag option">Frühstück inklusive</span>
+            <span class="tag option">2 Min zum Marienplatz</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- II: Englischer Garten -->
+    <article class="stop">
+      <div class="stop-grid">
+        <div class="stop-image bg-garten">
+          <span class="stop-num">II</span>
+        </div>
+        <div class="stop-body-wrap">
+          <div class="stop-time">17:00 — 18:00 · Spaziergang</div>
+          <h3 class="stop-name">Englischer Garten · <em>ein erster Blick.</em></h3>
+          <p class="stop-text">
+            Einer der größten Stadtparks Europas — weite Wiesen, Bäche, der
+            <strong>Chinesische Turm mit seinem legendären Biergarten</strong>
+            unter Kastanien. Unterwegs ein Abstecher zur Eisbachwelle, der
+            legendären Surfer-Welle am Haus der Kunst.
+            <em>(Sie ist seit November 2025 gesperrt — ob sie bis Mai wieder
+            läuft, weiß niemand. Hingehen lohnt trotzdem.)</em>
+          </p>
+          <div class="stop-tags">
+            <span class="tag option">Englischer Garten</span>
+            <span class="tag option">15 Min vom Hotel</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- III: Schneider Bräuhaus - FAMILIENFOTO -->
+    <article class="stop">
+      <div class="stop-grid">
+        <div class="stop-image bg-brauhaus">
+          <span class="stop-num">III</span>
+        </div>
+        <div class="stop-body-wrap">
+          <div class="stop-time">18:30 · Abendessen</div>
+          <h3 class="stop-name">Schneider Bräuhaus · <em>der Abend.</em></h3>
+          <p class="stop-text">
+            Die Heimat des Schneider Weisse — urig, laut, unverfälscht.
+            Berühmt für die klassische bayerische Küche: Kronfleisch,
+            Weißwurst, Schweinsbraten. Direkt neben dem Hotel, kurze Wege
+            nach der Anreise, langer Abend in gemütlicher Runde — die
+            <strong>Brezen kommen noch warm im Weidenkorb</strong>.
+          </p>
+          <div class="stop-tags">
+            <span class="tag confirmed">✓ Reservierung bestätigt</span>
+            <span class="tag info">Tal 7 · bayerisch</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- TAG 2 -->
+<section class="day bg-sun" id="tag2">
+  <div class="day-header">
+    <div class="day-number-box sky-shadow">
+      <div class="num">02</div>
+      <div class="lbl">Samstag</div>
+    </div>
+    <div>
+      <div class="day-date">09. Mai 2026</div>
+      <h2 class="day-title">Der Tag, an dem die <em>Stadt atmet</em>.</h2>
+    </div>
+  </div>
+  <div class="day-lede">
+    Morgens das Herz der Stadt am Viktualienmarkt. Nachmittags offen —
+    Garten, Museum oder Zoo, je nach Wetter. Abends italienisch und
+    schick, zwei Minuten vom Hotel.
+  </div>
+
+  <div class="stops">
+
+    <!-- IV: Viktualienmarkt -->
+    <article class="stop">
+      <div class="stop-grid">
+        <div class="stop-image bg-markt">
+          <span class="stop-num">IV</span>
+        </div>
+        <div class="stop-body-wrap">
+          <div class="stop-time">09:30 — 12:00 · Markttreiben</div>
+          <h3 class="stop-name">Viktualienmarkt · <em>das Herz.</em></h3>
+          <p class="stop-text">
+            140 Standl, ein bunter Maibaum, und seit über <strong>200 Jahren</strong>
+            der gleiche Rhythmus: Käse, Obst, Blumen, Brezen, Obazda.
+            Nicht konsumieren — durchstreifen. Die sechs Brunnenfiguren
+            der Münchner Volkssänger verstecken sich zwischen den Buden.
+          </p>
+          <div class="stop-tags">
+            <span class="tag option">Seit 1807</span>
+            <span class="tag option">22.000 m²</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- V: Samstag Nachmittag - Deutsches Museum als Hero-Bild -->
+    <article class="stop">
+      <div class="stop-grid">
+        <div class="stop-image bg-museum">
+          <span class="stop-num">V</span>
+        </div>
+        <div class="stop-body-wrap">
+          <div class="stop-time">Nachmittag · spontan</div>
+          <h3 class="stop-name">Drei Wege · <em>ein Nachmittag.</em></h3>
+          <p class="stop-text">
+            Je nach Wetter, Energie und Lust. Alle drei Optionen bringen
+            uns <strong>pünktlich für den Abend zurück</strong> ins Tal.
+          </p>
+
+          <div class="alternatives">
+            <div class="alternatives-label">Drei Alternativen</div>
+            <div class="alt-list">
+              <div class="alt-item">
+                <div class="alt-item-head">
+                  <div class="alt-item-name">Englischer Garten</div>
+                  <div class="alt-item-cond">bei Sonne</div>
+                </div>
+                <div class="alt-item-desc">
+                  Biergarten unter Kastanien am Chinesischen Turm, ein Bach
+                  zum Füße-Kühlen, Wiesen zum Ausbreiten. Für die Kinder
+                  Platz zum Laufen, für die Großeltern ein Bier im Schatten.
+                </div>
+              </div>
+              <div class="alt-item">
+                <div class="alt-item-head">
+                  <div class="alt-item-name">Deutsches Museum · <em>Kinderreich</em></div>
+                  <div class="alt-item-cond">bei Regen</div>
+                </div>
+                <div class="alt-item-desc">
+                  Eines der größten Technikmuseen der Welt, auf der
+                  Museumsinsel mitten in der Isar. Flugzeuge unter dem
+                  Gewölbe, Schiffe, eine ganze Bergwerks-Nachbildung — und
+                  das „Kinderreich" als eigener Bereich zum Tüfteln für
+                  Eva und Lukas.
+                </div>
+              </div>
+              <div class="alt-item">
+                <div class="alt-item-head">
+                  <div class="alt-item-name">Tierpark Hellabrunn</div>
+                  <div class="alt-item-cond">der Natur-Zoo</div>
+                </div>
+                <div class="alt-item-desc">
+                  Geo-Zoo am Isarhochufer, seit 1911. Elefanten, Pinguine,
+                  weitläufige Gehege. Ruhig, grün, entspannt.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- VI: Riva im Tal - PIZZA -->
+    <article class="stop">
+      <div class="stop-grid">
+        <div class="stop-image bg-pizza">
+          <span class="stop-num">VI</span>
+        </div>
+        <div class="stop-body-wrap">
+          <div class="stop-time">17:30 · Abendessen</div>
+          <h3 class="stop-name">Riva im Tal · <em>der italienische Abend.</em></h3>
+          <p class="stop-text">
+            Nach einem Tag München ein bewusster Bruch: <strong>Pizza aus
+            dem Steinofen</strong>, handgemachte Pasta, ein Glas Wein. Riva
+            ist eine der besten Adressen der Stadt für original
+            neapolitanische Küche — und liegt zwei Minuten vom Hotel.
+            Kurze Heimkehr, entspannter Ausklang.
+          </p>
+          <div class="stop-tags">
+            <span class="tag confirmed">✓ 17:30 · 8 Personen</span>
+            <span class="tag info">Tal 44 · à la carte</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- FEATURE · Schäfflertanz - ECHTES FOTO + LOGO -->
+<section class="feature">
+  <div class="feature-inner">
+    <div>
+      <div class="feature-tag">⭐ Nur alle sieben Jahre</div>
+      <h2>Der <em>Schäfflertanz.</em><br>Ein Moment, den man<br>selten sieht.</h2>
+      <p class="feature-body">
+        Münchner Tradition seit <strong>1517</strong>: Die Schäffler — die
+        Fassbinder — tanzen ihren Reigen nur alle sieben Jahre in roten
+        Jacken, weißen Hosen und mit grünen Reifen aus Buchsbaum. Zum
+        60. Jubiläum des Frühlingsfests findet er am Schlusssonntag
+        erstmals auf der Theresienwiese statt. Ein Moment, der sich bietet.
+      </p>
+      <div class="feature-stats">
+        <div>
+          <div class="stat-num">1517</div>
+          <div class="stat-lbl">Erstmals aufgeführt</div>
+        </div>
+        <div>
+          <div class="stat-num">7</div>
+          <div class="stat-lbl">Jahre zwischen Tänzen</div>
+        </div>
+        <div>
+          <div class="stat-num">60.</div>
+          <div class="stat-lbl">Jubiläumsjahr</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-logo">
+      <img src="images/fruehlingsfest-logo.png" alt="München Frühlingsfest">
+    </div>
+  </div>
+</section>
+
+<!-- TAG 3 -->
+<section class="day bg-cream" id="tag3">
+  <div class="day-header">
+    <div class="day-number-box grass-shadow">
+      <div class="num">03</div>
+      <div class="lbl">Sonntag</div>
+    </div>
+    <div>
+      <div class="day-date">10. Mai 2026</div>
+      <h2 class="day-title">Das <em>Finale</em> auf der Theresienwiese.</h2>
+    </div>
+  </div>
+  <div class="day-lede">
+    Zufällig der letzte Tag des 60. Münchner Frühlingsfests — mit
+    Handwerksumzug und Schäfflertanz. Danach das Abschluss-Essen,
+    dann Richtung Heimat.
+  </div>
+
+  <div class="stops">
+
+    <!-- VII: Frühlingsfest -->
+    <article class="stop">
+      <div class="stop-grid">
+        <div class="stop-image bg-fest">
+          <span class="stop-num">VII</span>
+        </div>
+        <div class="stop-body-wrap">
+          <div class="stop-time">11:00 — 13:00 · Theresienwiese</div>
+          <h3 class="stop-name">Frühlingsfest · <em>das 60. Jubiläum.</em></h3>
+          <p class="stop-text">
+            Vom 17. April bis 10. Mai 2026 feiert das Frühlingsfest sein
+            <strong>60. Jubiläum</strong> — drei Wochen statt zwei. Am Finaltag:
+            Schäffler- und Handwerksgruppen aus ganz Bayern ziehen übers
+            Festgelände. Riesenrad, Festzelte, Blasmusik. Mittendrin: der
+            Schäfflertanz.
+          </p>
+          <div class="stop-tags">
+            <span class="tag rare">⭐ Einmal in sieben Jahren</span>
+            <span class="tag info">U4/U5 · Eintritt frei</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- VIII: Mittagessen-Finale - anderer Bildausschnitt -->
+    <article class="stop">
+      <div class="stop-grid">
+        <div class="stop-image bg-sunday-lunch">
+          <span class="stop-num">VIII</span>
+        </div>
+        <div class="stop-body-wrap">
+          <div class="stop-time">13:00 — 14:30 · Mittagessen</div>
+          <h3 class="stop-name">Das letzte <em>bayerische Mittagessen.</em></h3>
+          <p class="stop-text">
+            Die Entscheidung fällt vor Ort. Im Festzelt mit Glück ein echtes
+            Finale — wenn nicht, wartet einer der <strong>schönsten
+            Biergärten Münchens</strong> fußläufig daneben.
+          </p>
+
+          <div class="alternatives">
+            <div class="alternatives-label">Zwei Alternativen</div>
+            <div class="alt-list">
+              <div class="alt-item">
+                <div class="alt-item-head">
+                  <div class="alt-item-name">Festhalle Bayernland</div>
+                  <div class="alt-item-cond">Plan A</div>
+                </div>
+                <div class="alt-item-desc">
+                  Direkt am Festgelände. Augustiner, Blasmusik, pures
+                  Festzelt-Gefühl. Weißbiergarten daneben immer ohne
+                  Reservierung möglich.
+                </div>
+              </div>
+              <div class="alt-item">
+                <div class="alt-item-head">
+                  <div class="alt-item-name">Augustiner-Keller</div>
+                  <div class="alt-item-cond">Plan B · reserviert</div>
+                </div>
+                <div class="alt-item-desc">
+                  Zehn Minuten Fußweg. Einer der ältesten und schönsten
+                  Biergärten Münchens — 5.000 Plätze unter Kastanien.
+                  Für 13:30 Uhr reserviert, falls nötig.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- LOGISTICS -->
+<section class="logistics" id="logistik">
+  <div class="logistics-inner">
+    <div class="log-head">
+      <div class="log-label">Das Kleingedruckte</div>
+      <h2 class="log-title">Wie das alles <em>zusammenpasst</em>.</h2>
+    </div>
+
+    <div class="log-grid">
+      <div class="log-card blue">
+        <div class="log-card-icon">P</div>
+        <h3>P+R Messestadt Ost</h3>
+        <p>
+          An der Point, 81829 München. Direkt an der A94, außerhalb der
+          Umweltzone, rund 1,50 € am Tag. Mit der U2 in 20 Minuten ins
+          Zentrum — kein Stadtstau, keine Plakette nötig.
+        </p>
+      </div>
+
+      <div class="log-card">
+        <div class="log-card-icon">K</div>
+        <h3>Ankunft im Tal</h3>
+        <p>
+          Von P+R mit der U2 direkt zum Marienplatz, dann fünf Minuten zu
+          Fuß zum Hotel. Gepäck gegebenenfalls schon vor Check-in (16:00)
+          an der Rezeption abstellen — das Zimmer wartet bis 22 Uhr.
+        </p>
+      </div>
+
+      <div class="log-card green">
+        <div class="log-card-icon">R</div>
+        <h3>Sonntag · Heimreise</h3>
+        <p>
+          Morgens Koffer in den Gepäckraum. Nach dem Frühlingsfest kurz
+          holen, U2 zum P+R, ab auf die A94. Plan: gegen 16 Uhr auf der
+          Autobahn — vor dem Abendverkehr.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p class="footer-quote">
+    München zeigt sich am schönsten, wenn man <em>Zeit mitbringt</em> —
+    und den Platz lässt für das, was nicht im Plan steht.
+  </p>
+  <div class="footer-mark">Ein Wochenende · München</div>
+  <div class="footer-dates">08 — 10 · Mai · 2026</div>
+</footer>
+
+<script>
+  const navLinks = document.querySelectorAll('.day-nav a');
+  const sections = document.querySelectorAll('.day, #logistik');
+
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+
+  sections.forEach(s => navObserver.observe(s));
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.stop, .log-card, .gp-option').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = `opacity 0.7s ${(i % 6) * 0.05}s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s ${(i % 6) * 0.05}s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s`;
+    revealObserver.observe(el);
+  });
+</script>
+
+</body>
+</html>
